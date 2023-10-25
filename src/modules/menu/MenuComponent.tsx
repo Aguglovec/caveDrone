@@ -1,5 +1,3 @@
-// import "./menu.css"
-
 import { useEffect } from 'react'
 import StartMenuPage from '../startMenu/StartMenuPage'
 import HighscoreComponent from '../highscore/HighscoreComponent'

@@ -63,7 +63,6 @@ function Game() {
 					ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
 					drawObj (ctx, caveToDraw, caveColor);
 					setDirection({x : 0, y : 1});
-					// ctx.fillStyle = caveColor;
 					drawObj (ctx, drone, droneColor);
 				}
 			}

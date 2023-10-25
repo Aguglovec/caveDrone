@@ -100,12 +100,15 @@ export function findPointsInbetween (start:coordinate2D, end:coordinate2D) {
 	return pointsInbetween
 }
 
-	
 
 
 export function restoreFromStorage() {
 	const data = localStorage.getItem(STORAGE_KEY);
     return data ? JSON.parse(data) : testScoreList;
+}
+
+function saveToStorage(scoreList:userScore[]) {
+	localStorage.setItem(STORAGE_KEY, JSON.stringify(scoreList));
 }
 
 export function submitScore (name:string,score:number) {
@@ -114,12 +117,6 @@ export function submitScore (name:string,score:number) {
 	if (newScorePlace > 0) {
 		oldHighscores.splice(newScorePlace,0,{name, score});
 		oldHighscores.pop()
-		console.log(newScorePlace);
-		console.log(oldHighscores);
 		saveToStorage(oldHighscores);
 	}
-}
-
-function saveToStorage(scoreList:userScore[]) {
-	localStorage.setItem(STORAGE_KEY, JSON.stringify(scoreList));
 }
